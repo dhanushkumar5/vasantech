@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 70" width="320" height="70">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B3C74"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+  </defs>
+  <!-- Brand Icon -->
+  <g transform="translate(10, 10)">
+    <rect x="0" y="0" width="48" height="48" rx="10" fill="url(#blueGrad)"/>
+    <!-- Stylized Monogram V with Tech Circuit / Check and Red Accent -->
+    <path d="M12 14 L24 36 L36 14" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="36" cy="14" r="4.5" fill="#E53935"/>
+    <path d="M18 20 L24 28 L30 20" fill="none" stroke="#64B5F6" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+  </g>
+  <!-- Typography -->
+  <text x="68" y="34" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" fill="#0B3C74" letter-spacing="1">VASAN <tspan fill="#E53935">TECH</tspan></text>
+  <text x="68" y="50" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="10.5" fill="#64748B" letter-spacing="0.5">COMPUTER &amp; PRINTER CARE • KUMBAKONAM</text>
+</svg>
