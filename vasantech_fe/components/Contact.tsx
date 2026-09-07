@@ -10,10 +10,10 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleEnquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const { name, phone, requirement, message } = formData;
-    const text = `Hello VASAN TECH,\n\nName: ${name.trim()}\nPhone: ${phone.trim()}\nRequirement: ${requirement.trim()}\nMessage: ${message.trim()}`;
+    const text = `Hello VASAN TECH,\nName: ${name.trim()}\nPhone: ${phone.trim()}\nRequirement: ${requirement.trim()}\nMessage: ${message.trim()}`;
     const whatsappUrl = `https://wa.me/919003041200?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
@@ -21,7 +21,7 @@ export default function Contact() {
   return (
     <section className="w-full bg-surface-container-lowest py-space-3xl" id="contact">
       <div className="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
-        <div className="text-center space-y-space-xs max-w-2xl mx-auto mb-space-2xl">
+        <div className="text-center space-y-space-xs max-w-2xl mx-auto mb-space-2xl reveal-on-scroll">
           <span className="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">
             Reach Out
           </span>
@@ -33,7 +33,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
           {/* Left Column: Location & Direct CTAs (5 cols) */}
-          <div className="lg:col-span-5 space-y-space-md">
+          <div className="lg:col-span-5 space-y-space-md reveal-on-scroll">
             <div className="rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-lg shadow-sm space-y-space-md">
               <h3 className="font-headline-sm text-headline-sm text-primary flex items-start gap-2">
                 <span className="material-symbols-outlined text-secondary mt-0.5">location_on</span>
@@ -69,7 +69,9 @@ export default function Contact() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-primary text-[20px]">electric_moped</span>
+                  <span className="material-symbols-outlined text-primary text-[20px]">
+                    electric_moped
+                  </span>
                   <span>
                     <strong>Doorstep Service:</strong> Doorstep support and pickup available in Kumbakonam and nearby areas
                   </span>
@@ -77,14 +79,14 @@ export default function Contact() {
               </div>
               <div className="pt-space-sm flex flex-col gap-space-xs">
                 <a
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container hover:-translate-y-0.5 transition-all shadow-sm active:translate-y-0"
                   href="tel:+919003041200"
                 >
                   <span className="material-symbols-outlined text-[20px]">phone_in_talk</span>
                   <span>Call +91 90030 41200</span>
                 </a>
                 <a
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-tertiary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors shadow-sm"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-tertiary-container text-on-primary font-label-md text-label-md hover:bg-primary hover:-translate-y-0.5 transition-all shadow-sm active:translate-y-0"
                   href="https://wa.me/919003041200"
                   rel="noopener noreferrer"
                   target="_blank"
@@ -97,7 +99,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Direct WhatsApp Enquiry Form (7 cols) */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 reveal-on-scroll">
             <div className="rounded-xl bg-surface-container-low border border-outline-variant/30 p-space-lg lg:p-space-xl shadow-sm">
               <div className="space-y-1 mb-space-md">
                 <h3 className="font-headline-md text-headline-md text-primary">
@@ -107,15 +109,14 @@ export default function Contact() {
                   Fill in your requirement below and send the details directly to our WhatsApp.
                 </p>
               </div>
-
-              <form className="space-y-space-md" onSubmit={handleSubmit}>
+              <form className="space-y-space-md" id="enquiryForm" onSubmit={handleEnquirySubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                   <div className="space-y-1">
                     <label className="block font-label-md text-label-md text-on-surface" htmlFor="form-name">
                       Name *
                     </label>
                     <input
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm transition-all"
                       id="form-name"
                       placeholder="Enter your name"
                       required
@@ -129,7 +130,7 @@ export default function Contact() {
                       Phone Number *
                     </label>
                     <input
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm transition-all"
                       id="form-phone"
                       placeholder="Enter phone number"
                       required
@@ -139,39 +140,48 @@ export default function Contact() {
                     />
                   </div>
                 </div>
-
                 <div className="space-y-1">
                   <label className="block font-label-md text-label-md text-on-surface" htmlFor="form-requirement">
                     Service / Sales Requirement *
                   </label>
                   <select
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm transition-all"
                     id="form-requirement"
                     required
                     value={formData.requirement}
                     onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
                   >
                     <option value="">Select requirement</option>
-                    <option value="Laptop Repair & Service">Laptop Repair &amp; Service</option>
-                    <option value="Desktop Repair & Service">Desktop Repair &amp; Service</option>
-                    <option value="Printer Repair & Service">Printer Repair &amp; Service</option>
-                    <option value="New / Refurbished Laptop">New / Refurbished Laptop</option>
-                    <option value="Desktop PC Purchase">Desktop PC Purchase</option>
-                    <option value="Printer Purchase">Printer Purchase</option>
-                    <option value="Networking, WiFi & Biometrics">Networking, WiFi &amp; Biometrics</option>
+                    <option value="Laptop Repair &amp; Service">Laptop Repair &amp; Service</option>
+                    <option value="Desktop Repair &amp; Service">Desktop Repair &amp; Service</option>
+                    <option value="Printer Repair &amp; Service">Printer Repair &amp; Service</option>
+                    <option value="Gaming Laptops">Gaming Laptops</option>
+                    <option value="Business Laptops">Business Laptops</option>
+                    <option value="Student &amp; Everyday Laptops">Student &amp; Everyday Laptops</option>
+                    <option value="Thin &amp; Lightweight Laptops">Thin &amp; Lightweight Laptops</option>
+                    <option value="Gaming PCs">Gaming PCs</option>
+                    <option value="Office &amp; Business PCs">Office &amp; Business PCs</option>
+                    <option value="Home &amp; Student PCs">Home &amp; Student PCs</option>
+                    <option value="Custom Assembled PCs">Custom Assembled PCs</option>
+                    <option value="Ink Tank Printers">Ink Tank Printers</option>
+                    <option value="Laser Printers">Laser Printers</option>
+                    <option value="All-in-One Printers">All-in-One Printers</option>
+                    <option value="Color Printers">Color Printers</option>
+                    <option value="Monochrome Printers">Monochrome Printers</option>
+                    <option value="Multifunction Printers">Multifunction Printers</option>
+                    <option value="Networking, WiFi &amp; Biometrics">Networking, WiFi &amp; Biometrics</option>
                     <option value="CCTV">CCTV</option>
                     <option value="Projectors">Projectors</option>
                     <option value="Interactive Panels">Interactive Panels</option>
-                    <option value="Request Doorstep Service">Request Doorstep Service</option>
+                    <option value="Doorstep Service Request">Request Doorstep Service</option>
                   </select>
                 </div>
-
                 <div className="space-y-1">
                   <label className="block font-label-md text-label-md text-on-surface" htmlFor="form-message">
                     Message / Issue Details
                   </label>
                   <textarea
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm"
+                    className="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest border border-outline-variant/60 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary font-body-sm text-body-sm transition-all"
                     id="form-message"
                     placeholder="Briefly describe your device problem or requirement..."
                     rows={3}
@@ -179,9 +189,8 @@ export default function Contact() {
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   />
                 </div>
-
                 <button
-                  className="w-full py-3 rounded-lg bg-tertiary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 rounded-lg bg-tertiary-container text-on-primary font-label-lg text-label-lg hover:bg-primary hover:-translate-y-0.5 transition-all duration-200 shadow-md flex items-center justify-center gap-2 active:translate-y-0 cursor-pointer"
                   type="submit"
                 >
                   <span className="material-symbols-outlined text-[20px]">chat</span>

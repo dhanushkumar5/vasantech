@@ -41,6 +41,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a className="hover:text-primary transition-colors" href="#brands">
+                  Brands We Support
+                </a>
+              </li>
+              <li>
                 <a className="hover:text-primary transition-colors" href="#doorstep-service">
                   Doorstep Service
                 </a>
@@ -74,7 +79,9 @@ export default function Footer() {
             <h4 className="font-headline-sm text-headline-sm text-on-surface">Location &amp; Contact</h4>
             <div className="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant">
               <p className="flex items-start gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">location_on</span>
+                <span className="material-symbols-outlined text-[18px] text-primary mt-0.5">
+                  location_on
+                </span>
                 <span>No. 1378, Manargudi Main Road, Sakkottai, Kumbakonam – 612 401, Tamil Nadu</span>
               </p>
               <p className="flex items-center gap-2">
@@ -95,7 +102,9 @@ export default function Footer() {
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-primary">electric_moped</span>
+                <span className="material-symbols-outlined text-[18px] text-primary">
+                  electric_moped
+                </span>
                 <span>Doorstep Service Available</span>
               </p>
             </div>

@@ -1,15 +1,15 @@
 export default function MobileStickyBar() {
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md p-space-xs border-t border-outline-variant/30 flex gap-space-xs">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md p-space-xs border-t border-outline-variant/30 flex gap-space-xs shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
       <a
-        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm"
+        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm active:opacity-90"
         href="tel:+919003041200"
       >
         <span className="material-symbols-outlined text-[18px]">call</span>
         <span>Call</span>
       </a>
       <a
-        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-tertiary-container text-on-primary font-label-md text-label-md shadow-sm"
+        className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-tertiary-container text-on-primary font-label-md text-label-md shadow-sm active:opacity-90"
         href="https://wa.me/919003041200"
         rel="noopener noreferrer"
         target="_blank"
